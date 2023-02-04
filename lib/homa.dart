@@ -26,14 +26,16 @@ class _homaState extends State<homa> {
                       Global.url = e['src'];
                     });
                   },
-                  child: ListTile(
-                    leading: Image.network(
-                      '${e['images']}',
-                      height: 70,
-                      width: 70,
+                  child: Container(
+                    width: 200,
+                    height: 310,
+                    child: Column(
+                      children: [
+                        Container(
+                          child: Image.network("${e['images']}"),
+                        ),
+                      ],
                     ),
-                    title: Text('${e['name']}'),
-                    subtitle: Text('${e['desc']}'),
                   ),
                 ))
             .toList(),

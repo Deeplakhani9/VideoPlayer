@@ -43,16 +43,16 @@ class _videoState extends State<video> {
                   });
                 },
                 child: Text("Go to Video Player")),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed("3");
-                },
-                child: Text("Go to carousel slider page")),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed("4");
-                },
-                child: Text("Go to URL")),
+            // ElevatedButton(
+            //     onPressed: () {
+            //       Navigator.of(context).pushNamed("3");
+            //     },
+            //     child: Text("Go to carousel slider page")),
+            // ElevatedButton(
+            //     onPressed: () {
+            //       Navigator.of(context).pushNamed("4");
+            //     },
+            //     child: Text("Go to URL")),
           ],
         ),
       ),

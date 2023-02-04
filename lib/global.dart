@@ -32,8 +32,7 @@ class Global {
       'desc': "Singers:King",
     },
     {
-      'images':
-          "https://www.lyricsbell.com/wp-content/uploads/2022/12/jhoome-jo-pathaan-arijit-singh.jpg",
+      'images': "https://i.ytimg.com/vi/YxWlaYCA8MU/maxresdefault.jpg",
       'name': "Jhoome Jo Pathaan",
       'src': "asset/videos/6.mp4",
       'desc': "Singers:Arijit Singh, Sukriti Kakar, Vishal and Sheykhar",

@@ -1,14 +1,11 @@
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:video_player/video_player.dart';
 
 import 'global.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]);
 }
 
 class deep extends StatefulWidget {
@@ -29,13 +26,16 @@ class _deepState extends State<deep> {
     setState(() {});
     chewie = ChewieController(
       videoPlayerController: videos,
+      fullScreenByDefault: true,
       autoPlay: true,
+      // allowFullScreen: false
     );
   }
 
   @override
   void initState() {
     loadvideo();
+    // SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft]);
     super.initState();
   }
 
@@ -49,15 +49,13 @@ class _deepState extends State<deep> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            child: AspectRatio(
+      body: RotationTransition(
+        turns: AlwaysStoppedAnimation(0 / 360),
+        child: Container(
+          child: AspectRatio(
               aspectRatio: videos.value.aspectRatio,
-              child: Chewie(controller: chewie),
-            ),
-          ),
-        ],
+              child: Chewie(controller: chewie)),
+        ),
       ),
     );
   }
