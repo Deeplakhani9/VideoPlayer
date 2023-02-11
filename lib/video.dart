@@ -1,11 +1,14 @@
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:video_player/video_player.dart';
 
 import 'global.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 }
 
 class deep extends StatefulWidget {
@@ -28,15 +31,17 @@ class _deepState extends State<deep> {
       videoPlayerController: videos,
       fullScreenByDefault: true,
       autoPlay: true,
-      // allowFullScreen: false
+      allowFullScreen: true,
+      looping: true,
     );
   }
 
   @override
   void initState() {
     loadvideo();
-    // SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft]);
     super.initState();
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
   }
 
   @override
